@@ -20,8 +20,9 @@ import {
 import styles from "./styles";
 
 //List
-import coffeeshops from "../CoffeeList/list";
 import CartButton from "../Buttons/CartButton";
+// Store
+import CoffeeStore from "../../store/coffeeStore";
 
 class CoffeeDetail extends Component {
   state = {
@@ -42,7 +43,7 @@ class CoffeeDetail extends Component {
 
   render() {
     const coffeeshopID = this.props.navigation.getParam("coffeeshopID");
-    const coffeeshop = coffeeshops.find(
+    const coffeeshop = CoffeeStore.coffeeshops.find(
       coffeeshop => coffeeshopID === coffeeshop.id
     );
     return (

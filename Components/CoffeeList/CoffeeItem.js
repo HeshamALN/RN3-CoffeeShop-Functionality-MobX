@@ -7,12 +7,15 @@ import { ListItem, Card, CardItem, Thumbnail, Text, Left } from "native-base";
 
 // Style
 import styles from "./styles";
+import coffeeStore from "../../store/coffeeStore";
 
 const CoffeeItem = ({ coffeeshop, navigation }) => {
   const handlePress = () =>
     navigation.navigate("DetailScreen", {
       coffeeshopID: coffeeshop.id,
-      coffeeshopName: coffeeshop.name
+      coffeeshopName: coffeeshop.name,
+      coffeeshopImage: coffeeshop.img,
+      coffeeshopBackground: coffeeshop.background
     });
 
   return (
