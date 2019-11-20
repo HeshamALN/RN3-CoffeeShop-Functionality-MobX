@@ -6,23 +6,13 @@ import { Text, List, Button } from "native-base";
 // Component
 import CartItem from "./CartItem";
 
+//store
+import cartStore from "../../store/cartStore";
+
 class CoffeeCart extends Component {
-  state = {
-    items: [
-      {
-        drink: "Latte",
-        option: "Small",
-        quantity: 2
-      },
-      {
-        drink: "Espresso",
-        option: "Large",
-        quantity: 1
-      }
-    ]
-  };
+  state = {};
   render() {
-    const cartItems = this.state.items.map(item => (
+    const cartItems = cartStore.items.map(item => (
       <CartItem item={item} key={`${item.drink} ${item.option}`} />
     ));
 
